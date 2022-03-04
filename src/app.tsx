@@ -1,20 +1,19 @@
-import Logo from './logo';
+import LeftPane from './components/LeftPane';
+import Tabs from './components/Tabs';
 
 export default function App() {
   return (
     <>
-      <Logo />
-      <p>Hello Vite + Preact!</p>
-      <p>
-        <a
-          className="link"
-          href="https://preactjs.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Preact
-        </a>
-      </p>
+      <Tabs />
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+      }}
+      >
+        <LeftPane />
+      </div>
     </>
   );
 }
