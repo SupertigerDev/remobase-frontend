@@ -1,9 +1,15 @@
+import { observer } from 'mobx-react-lite';
 import styles from './LeftPane.module.css';
+import store from '../store/store';
 
-export default function LeftPane() {
+const LeftPane = observer(() => {
+  const { selectedTab, selectedTabId } = store.tabs;
   return (
     <div className={styles.container}>
-      LeftPane
+      <selectedTab.DrawerComponent />
+      {selectedTabId}
     </div>
   );
-}
+});
+
+export default LeftPane;

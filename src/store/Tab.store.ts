@@ -1,16 +1,30 @@
 import { makeAutoObservable } from 'mobx';
 
+interface Data {
+  id: number;
+  title: string;
+  Icon: any;
+  Component: any;
+  DrawerComponent: any;
+}
+
 export default class Tab {
   id: number;
 
-  name: string;
+  title: string;
+
+  Icon: any;
 
   Component: any;
 
-  constructor(id: number, name: string, Component: any) {
+  DrawerComponent: any;
+
+  constructor(data: Data) {
     makeAutoObservable(this);
-    this.id = id;
-    this.name = name;
-    this.Component = Component;
+    this.id = data.id;
+    this.title = data.title;
+    this.Icon = data.Icon;
+    this.Component = data.Component;
+    this.DrawerComponent = data.DrawerComponent;
   }
 }

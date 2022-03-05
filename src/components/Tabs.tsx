@@ -1,26 +1,27 @@
 import { observer } from 'mobx-react-lite';
+import { VscAdd } from 'react-icons/vsc';
 import styles from './Tabs.module.css';
 import Tab from './Tab';
 import store from '../store/store';
+import Clickable from './Clickable';
 
 const Tabs = observer(() => {
   const { tabs } = store;
   const onNewTabClicked = () => {
-    tabs.createTab('test', {});
+    tabs.createHomeTab();
   };
 
   return (
     <div className={styles.container}>
-      { tabs.tabsArray.map((tab) => <Tab key={tab.id} tab={tab} />)}
-      <div
-        role="button"
-        tabIndex={0}
+      <div className={styles.tabs}>
+        { tabs.tabsArray.map((tab) => <Tab key={tab.id} tab={tab} />)}
+      </div>
+      <Clickable
         className={styles.newTabButton}
         onClick={onNewTabClicked}
-        onKeyDown={onNewTabClicked}
       >
-        +
-      </div>
+        <VscAdd />
+      </Clickable>
     </div>
   );
 });
