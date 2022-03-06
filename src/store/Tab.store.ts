@@ -5,7 +5,6 @@ interface Data {
   title: string;
   Icon: any;
   Component: any;
-  DrawerComponent: any;
 }
 
 export default class Tab {
@@ -17,14 +16,11 @@ export default class Tab {
 
   Component: any;
 
-  DrawerComponent: any;
-
   constructor(data: Data) {
     makeAutoObservable(this);
     this.id = data.id;
     this.title = data.title;
     this.Icon = data.Icon;
     this.Component = data.Component;
-    this.DrawerComponent = data.DrawerComponent;
   }
 }

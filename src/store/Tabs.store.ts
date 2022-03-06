@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import { AiFillHome } from 'react-icons/ai';
-import NewTabDrawer from '../components/TabPages/NewTabDrawer';
-import NewTab from '../components/TabPages/NewTab';
+import HomeTab from '../components/TabPages/HomeTab';
 import { Store } from './store';
 import Tab from './Tab.store';
 
@@ -9,7 +8,6 @@ interface CreateTabData {
   title: string;
   Icon: any;
   Component: any;
-  DrawerComponent: any;
 }
 
 export default class Tabs {
@@ -36,7 +34,6 @@ export default class Tabs {
       title: data.title,
       Icon: data.Icon,
       Component: data.Component,
-      DrawerComponent: data.DrawerComponent,
     });
     this.tabs[this.totalTabsCount] = tab;
     this.changeTab(tab.id);
@@ -45,10 +42,9 @@ export default class Tabs {
 
   createHomeTab() {
     this.createTab({
-      title: 'New Tab',
+      title: 'Home',
       Icon: AiFillHome({ color: 'yellow', size: '18px' }),
-      Component: NewTab,
-      DrawerComponent: NewTabDrawer,
+      Component: HomeTab,
     });
   }
 
