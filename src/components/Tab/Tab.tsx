@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react-lite';
 import { IoMdClose } from 'react-icons/io';
-import store from '../store/store';
-import Tab from '../store/Tab.store';
+import store from '../../store/store';
+import Tab from '../../store/Tab.store';
 import styles from './Tab.module.css';
-import Clickable from './Clickable';
+import Clickable from '../Clickable';
 
 interface Props {
   tab: Tab

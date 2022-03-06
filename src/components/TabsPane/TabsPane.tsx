@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react-lite';
 import { VscAdd } from 'react-icons/vsc';
-import styles from './Tabs.module.css';
-import Tab from './Tab';
-import store from '../store/store';
-import Clickable from './Clickable';
+import styles from './TabsPane.module.css';
+import Tab from '../Tab/Tab';
+import store from '../../store/store';
+import Clickable from '../Clickable';
 
 const Tabs = observer(() => {
   const { tabs } = store;

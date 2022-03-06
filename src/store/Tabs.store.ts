@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { AiFillHome } from 'react-icons/ai';
-import DrawerNew from '../components/DrawerNew';
-import TabNew from '../components/TabNew';
+import NewTabDrawer from '../components/TabPages/NewTabDrawer';
+import NewTab from '../components/TabPages/NewTab';
 import { Store } from './store';
 import Tab from './Tab.store';
 
@@ -47,8 +47,8 @@ export default class Tabs {
     this.createTab({
       title: 'New Tab',
       Icon: AiFillHome({ color: 'yellow', size: '18px' }),
-      Component: TabNew,
-      DrawerComponent: DrawerNew,
+      Component: NewTab,
+      DrawerComponent: NewTabDrawer,
     });
   }
 
